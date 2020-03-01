@@ -1,2 +1,4 @@
 .idea
 spring.iml
+/spring-demo-annotations/target/
+/spring-demo-one/target/

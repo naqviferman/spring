@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>spring-demo-one</module>
+        <module>spring-demo-annotations</module>
     </modules>
     <packaging>pom</packaging>
 

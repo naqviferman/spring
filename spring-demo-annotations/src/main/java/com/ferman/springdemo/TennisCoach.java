@@ -8,8 +8,24 @@ public class TennisCoach implements Coach {
 
     private FortuneService fortuneService;
 
-    @Autowired
+    public TennisCoach() {
+        System.out.println("Tennis Coach: Default Constructor");
+    }
+
+    /*@Autowired
     public TennisCoach(FortuneService fortuneService) {
+        this.fortuneService = fortuneService;
+    }*/
+
+    /*@Autowired
+    public void setFortuneService(FortuneService fortuneService) {
+        System.out.println("Tennis Coach: Setting Fortune Service");
+        this.fortuneService = fortuneService;
+    }*/
+
+    @Autowired
+    public void doSomeCrazyStuff(FortuneService fortuneService) {
+        System.out.println("Tennis Coach: Inside doSomeCrazyStuff");
         this.fortuneService = fortuneService;
     }
 

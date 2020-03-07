@@ -16,10 +16,6 @@ public class SwimCoach implements Coach {
     @Qualifier("propertyFileFortuneService")
     private FortuneService fortuneService;
 
-    public SwimCoach() {
-        System.out.println("Swim Coach: Default Constructor");
-    }
-
     @Value("${foo.email}")
     public void setEmail(String email) {
         this.email = email;

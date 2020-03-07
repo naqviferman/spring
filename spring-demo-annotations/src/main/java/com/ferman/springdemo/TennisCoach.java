@@ -2,9 +2,14 @@ package com.ferman.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 @Component
+@Scope("singleton")
 public class TennisCoach implements Coach {
 
 //    @Autowired
@@ -15,11 +20,11 @@ public class TennisCoach implements Coach {
         System.out.println("Tennis Coach: Default Constructor");
     }
 
-    @Autowired
+    /*@Autowired
     public TennisCoach(@Qualifier("happyFortuneService") FortuneService fortuneService) {
         System.out.println("Tennis Coach: Parameterized Constructor");
         this.fortuneService = fortuneService;
-    }
+    }*/
 
     @Autowired
     @Qualifier("randomFortuneService")
@@ -33,6 +38,17 @@ public class TennisCoach implements Coach {
         System.out.println("Tennis Coach: Inside doSomeCrazyStuff");
         this.fortuneService = fortuneService;
     }*/
+
+    @PostConstruct
+    public void myInit() {
+        System.out.println("Custom init method");
+    }
+
+    @PreDestroy
+    public void myDestroy() {
+        System.out.println("Custom destroy method");
+    }
+
 
     @Override
     public String getDailyWorkout() {

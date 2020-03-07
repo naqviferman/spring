@@ -18,13 +18,13 @@ public class PropertyFileFortuneService implements FortuneService {
 
     private String[] fortunes;
 
-    public PropertyFileFortuneService() {
-        System.out.println("PropertyFileFortuneService: Default Constructor");
-        System.out.println("fortune_1 = " + fortune_1);     // Would be null as @Value has not run till this point
-    }
+//    public PropertyFileFortuneService() {
+//        System.out.println("PropertyFileFortuneService: Default Constructor");
+//        System.out.println("fortune_1 = " + fortune_1);     // Would be null as @Value has not run till this point
+//    }
 
     @PostConstruct
-    public void dataSetup() {
+    void dataSetup() {
         fortunes = new String[3];
         fortunes[0] = fortune_1;
         fortunes[1] = fortune_2;

@@ -7,25 +7,26 @@ import org.springframework.stereotype.Component;
 @Component
 public class TennisCoach implements Coach {
 
-    @Autowired
-    @Qualifier("RESTFortuneService")
+//    @Autowired
+//    @Qualifier("RESTFortuneService")
     private FortuneService fortuneService;
 
     public TennisCoach() {
         System.out.println("Tennis Coach: Default Constructor");
     }
 
-    /*@Autowired
-    public TennisCoach(FortuneService fortuneService) {
+    @Autowired
+    public TennisCoach(@Qualifier("happyFortuneService") FortuneService fortuneService) {
         System.out.println("Tennis Coach: Parameterized Constructor");
         this.fortuneService = fortuneService;
-    }*/
+    }
 
-    /*@Autowired
+    @Autowired
+    @Qualifier("randomFortuneService")
     public void setFortuneService(FortuneService fortuneService) {
         System.out.println("Tennis Coach: Setting Fortune Service");
         this.fortuneService = fortuneService;
-    }*/
+    }
 
     /*@Autowired
     public void doSomeCrazyStuff(FortuneService fortuneService) {

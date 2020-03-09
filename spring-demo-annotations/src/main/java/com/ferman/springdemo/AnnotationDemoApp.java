@@ -12,11 +12,11 @@ public class AnnotationDemoApp {
         System.out.println(thatSillyCoach.getDailyWorkout());
         System.out.println(thatSillyCoach.getDailyFortune());
 
-//        SwimCoach mySwimCoach = context.getBean(SwimCoach.class);
-//        System.out.println(mySwimCoach.getEmail());
-//        System.out.println(mySwimCoach.getTeam());
+        FootballCoach myFootballCoach = context.getBean(FootballCoach.class);
+        System.out.println(myFootballCoach.getEmail());
+        System.out.println(myFootballCoach.getTeam());
 
-//        System.out.println(mySwimCoach.getDailyFortune());
+        System.out.println(myFootballCoach.getDailyFortune());
 
         context.close();
     }
